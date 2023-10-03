@@ -15,7 +15,7 @@ enum EExampleType{
 }
 
 enum EAttributeType{
-	Heath = 1, # 生命
+	Health = 1, # 生命
 	MaxHealth = 2, # 最大生命
 	Attack = 3, # 攻击
 	Defense = 4, # 防御
