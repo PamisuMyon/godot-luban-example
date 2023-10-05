@@ -29,8 +29,19 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="LabelInfo" type="Label" parent="UIConfigDetail/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UIConfigDetail/MarginContainer"]
 layout_mode = 2
+
+[node name="LabelInfo1" type="Label" parent="UIConfigDetail/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "text"
+label_settings = SubResource("LabelSettings_n5ijf")
+
+[node name="LabelInfo2" type="Label" parent="UIConfigDetail/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "text"
 label_settings = SubResource("LabelSettings_n5ijf")

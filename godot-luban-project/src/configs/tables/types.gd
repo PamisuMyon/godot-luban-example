@@ -162,11 +162,179 @@ class ExamplesExampleSingleton:
 		self.gift_cooldown = _json_['gift_cooldown']
 
 
+class ExamplesTbExampleList:
+	var _data_list = []
+	func _init(_json_) -> void:
+		
+		for _json2_ in _json_:
+			var _v
+			_v = ExamplesExampleList.new(_json2_)
+			self._data_list.append(_v)
+
+	func get_data_list():
+		return self._data_list
+
+	func get_data(index) -> ExamplesExampleList:
+		return self._data_list[index]
+
+
+class ExamplesExampleList:
+	
+	var name # 名字    类型：string
+	var race # 种族    类型：string
+	var occupation # 职业    类型：string
+	var age # 年龄    类型：int
+	var origin # 出身地    类型：string
+	func _init(_json_) -> void:
+		self.name = _json_['name']
+		self.race = _json_['race']
+		self.occupation = _json_['occupation']
+		self.age = _json_['age']
+		self.origin = _json_['origin']
+
+
+class GameTbCharacterConfig:
+	var _data_map = {}
+	var _data_list = []
+
+	func _init(_json_) -> void:
+		for _json2_ in _json_:
+			var _v
+			_v = GameCharacterConfig.new(_json2_)
+			self._data_list.append(_v)
+			self._data_map[_v.id] = _v
+
+	func get_data_map() -> Dictionary:
+		return self._data_map
+
+	func get_data_list():
+		return self._data_list
+
+	func get_data(key) -> GameCharacterConfig: 
+		return self._data_map.get(key)
+
+
+class GameCharacterConfig:
+	
+	var id # 角色id    类型：string
+	var prefab_res # 预制体资源地址    类型：string
+	var attack_pre_delay # 攻击前摇    类型：float
+	var attack_post_delay # 攻击后摇    类型：float
+	var die_duration # 死亡动画时长    类型：float
+	var move_speed # 移动速度    类型：float
+	func _init(_json_) -> void:
+		self.id = _json_['id']
+		self.prefab_res = _json_['prefab_res']
+		self.attack_pre_delay = _json_['attack_pre_delay']
+		self.attack_post_delay = _json_['attack_post_delay']
+		self.die_duration = _json_['die_duration']
+		self.move_speed = _json_['move_speed']
+
+
+class GameTbPlayerInitialConfig:
+	var _data_map = {}
+	var _data_list = []
+
+	func _init(_json_) -> void:
+		for _json2_ in _json_:
+			var _v
+			_v = GamePlayerInitialConfig.new(_json2_)
+			self._data_list.append(_v)
+			self._data_map[_v.id] = _v
+
+	func get_data_map() -> Dictionary:
+		return self._data_map
+
+	func get_data_list():
+		return self._data_list
+
+	func get_data(key) -> GamePlayerInitialConfig: 
+		return self._data_map.get(key)
+
+
+class GamePlayerInitialConfig:
+	
+	var id # 角色id    类型：string
+	var max_health # 最大生命值    类型：float
+	var attack # 攻击    类型：float
+	func _init(_json_) -> void:
+		self.id = _json_['id']
+		self.max_health = _json_['max_health']
+		self.attack = _json_['attack']
+
+
+class GameTbMainLevelConfig:
+	var _data_map = {}
+	var _data_list = []
+
+	func _init(_json_) -> void:
+		for _json2_ in _json_:
+			var _v
+			_v = GameMainLevelConfig.new(_json2_)
+			self._data_list.append(_v)
+			self._data_map[_v.id] = _v
+
+	func get_data_map() -> Dictionary:
+		return self._data_map
+
+	func get_data_list():
+		return self._data_list
+
+	func get_data(key) -> GameMainLevelConfig: 
+		return self._data_map.get(key)
+
+
+class GameMainLevelConfig:
+	
+	var id # 关卡id    类型：int
+	var stage_res # 关卡资源地址    类型：string
+	var enemy_id # 敌方角色id    类型：string
+	var max_health # 敌方最大生命    类型：float
+	var attack # 敌方攻击    类型：float
+	func _init(_json_) -> void:
+		self.id = _json_['id']
+		self.stage_res = _json_['stage_res']
+		self.enemy_id = _json_['enemy_id']
+		self.max_health = _json_['max_health']
+		self.attack = _json_['attack']
+
+
+class GameTbGlobalConfig:
+	var _data: Dictionary
+	func _init(_json_) -> void:
+		assert(len(_json_) == 1, 'table mode=one, but size != 1')
+		self._data = _json_[0]
+
+	func get_data() -> Dictionary: 
+		return self._data
+
+	# 默认玩家角色id
+	func default_player_character():
+		return self._data.default_player_character
+
+
+class GameGlobalConfig:
+	
+	var default_player_character # 默认玩家角色id    类型：string
+	func _init(_json_) -> void:
+		self.default_player_character = _json_['default_player_character']
+
+
 var TbExampleBasic: ExamplesTbExampleBasic
 var TbExampleAdvance: ExamplesTbExampleAdvance
 var TbExampleSingleton: ExamplesTbExampleSingleton
+var TbExampleList: ExamplesTbExampleList
+var TbCharacterConfig: GameTbCharacterConfig
+var TbPlayerInitialConfig: GameTbPlayerInitialConfig
+var TbMainLevelConfig: GameTbMainLevelConfig
+var TbGlobalConfig: GameTbGlobalConfig
 
 func _init(loader) -> void:
 	self.TbExampleBasic = ExamplesTbExampleBasic.new(loader.load_file('examples_tbexamplebasic'))
 	self.TbExampleAdvance = ExamplesTbExampleAdvance.new(loader.load_file('examples_tbexampleadvance'))
 	self.TbExampleSingleton = ExamplesTbExampleSingleton.new(loader.load_file('examples_tbexamplesingleton'))
+	self.TbExampleList = ExamplesTbExampleList.new(loader.load_file('examples_tbexamplelist'))
+	self.TbCharacterConfig = GameTbCharacterConfig.new(loader.load_file('game_tbcharacterconfig'))
+	self.TbPlayerInitialConfig = GameTbPlayerInitialConfig.new(loader.load_file('game_tbplayerinitialconfig'))
+	self.TbMainLevelConfig = GameTbMainLevelConfig.new(loader.load_file('game_tbmainlevelconfig'))
+	self.TbGlobalConfig = GameTbGlobalConfig.new(loader.load_file('game_tbglobalconfig'))

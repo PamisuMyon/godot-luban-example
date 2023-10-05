@@ -1,0 +1,44 @@
+[
+  {
+	"name": "阿尔德琳",
+	"race": "精灵",
+	"occupation": "游侠",
+	"age": 126,
+	"origin": "艾尔文森林"
+  },
+  {
+	"name": "格罗克",
+	"race": "矮人",
+	"occupation": "铁匠",
+	"age": 60,
+	"origin": "卡兹摩王国"
+  },
+  {
+	"name": "伊莉莎白",
+	"race": "人类",
+	"occupation": "占星师",
+	"age": 24,
+	"origin": "王都艾尔西亚"
+  },
+  {
+	"name": "索拉斯",
+	"race": "暗夜精灵",
+	"occupation": "刺客",
+	"age": 175,
+	"origin": "暗影之林"
+  },
+  {
+	"name": "霍克",
+	"race": "兽人",
+	"occupation": "萨满祭司",
+	"age": 38,
+	"origin": "烈焰部落的火山堡垒"
+  },
+  {
+	"name": "艾丽莎",
+	"race": "冰精灵",
+	"occupation": "元素使",
+	"age": 152,
+	"origin": "冰之国"
+  }
+]

@@ -11,6 +11,7 @@ func _init() -> void:
 
 ## 加载配置表文件 将被Types调用
 func load_file(file_name: String):
+	# 读取json文件并反序列化
 	var json_file = FileAccess.open("%s%s.json" % [self.config_json_path, file_name], FileAccess.READ)
 	var json_text = json_file.get_as_text()
 	json_file.close()

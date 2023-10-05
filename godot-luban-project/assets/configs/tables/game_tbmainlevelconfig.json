@@ -1,0 +1,9 @@
+[
+  {
+	"id": 10001,
+	"stage_res": "Stage_Industry",
+	"enemy_id": "Enemy_City_1",
+	"max_health": 50,
+	"attack": 5
+  }
+]
