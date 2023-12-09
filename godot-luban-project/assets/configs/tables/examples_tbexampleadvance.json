@@ -1,137 +1,109 @@
 [
   {
-	"some_array_1": [
-	  21,
-	  33,
-	  2,
-	  21,
-	  8
-	],
-	"some_array_2": [
-	  1.2,
-	  32,
-	  5.434,
-	  684.9
-	],
-	"some_array_3": [
-	  "apple",
-	  "kiwi",
-	  "grape",
-	  "banana"
-	],
-	"some_array_4": [
-	  [
-		2,
-		5,
-		8
-	  ],
-	  [
-		32,
-		19
-	  ],
-	  [
-		12,
-		46,
-		78,
-		98
-	  ]
-	],
-	"some_map_1": [
-	  [
-		"王诛魔",
-		1000
-	  ],
-	  [
-		"李杀神",
-		1200
-	  ],
-	  [
-		"刘斩仙",
-		900
-	  ]
-	],
-	"some_bean_1": {
-	  "item_id": 1001,
-	  "count": 100,
-	  "description": "这是一段描述"
-	},
-	"some_bean_2": {
-	  "item_id": 1001,
-	  "count": 100,
-	  "description": "这是一段描述"
-	},
-	"some_bean_list": [
-	  {
-		"item_id": 1001,
-		"count": 1,
-		"description": "desc1"
-	  },
-	  {
-		"item_id": 1002,
-		"count": 2,
-		"description": "desc2"
-	  }
-	]
+    "some_array_1": [
+      21,
+      33,
+      2,
+      21,
+      8
+    ],
+    "some_array_2": [
+      1.2,
+      32,
+      5.434,
+      684.9
+    ],
+    "some_array_3": [
+      "apple",
+      "kiwi",
+      "grape",
+      "banana"
+    ],
+    "some_map_1": [
+      [
+        "王诛魔",
+        1000
+      ],
+      [
+        "李杀神",
+        1200
+      ],
+      [
+        "刘斩仙",
+        900
+      ]
+    ],
+    "some_bean_1": {
+      "item_id": 1001,
+      "count": 100,
+      "description": "这是一段描述"
+    },
+    "some_bean_2": {
+      "item_id": 1001,
+      "count": 100,
+      "description": "这是一段描述"
+    },
+    "some_bean_list": [
+      {
+        "item_id": 1001,
+        "count": 1,
+        "description": "desc1"
+      },
+      {
+        "item_id": 1002,
+        "count": 2,
+        "description": "desc2"
+      }
+    ]
   },
   {
-	"some_array_1": [
-	  12,
-	  21,
-	  3,
-	  1
-	],
-	"some_array_2": [
-	  3.3,
-	  21,
-	  99.2
-	],
-	"some_array_3": [
-	  "rabbit",
-	  "tank"
-	],
-	"some_array_4": [
-	  [
-		5,
-		1
-	  ],
-	  [
-		2,
-		3,
-		72
-	  ]
-	],
-	"some_map_1": [
-	  [
-		"赵日天",
-		30000.998
-	  ]
-	],
-	"some_bean_1": {
-	  "item_id": 2001,
-	  "count": 5,
-	  "description": ""
-	},
-	"some_bean_2": {
-	  "item_id": 2001,
-	  "count": 5,
-	  "description": ""
-	},
-	"some_bean_list": [
-	  {
-		"item_id": 1001,
-		"count": 1,
-		"description": "desc1"
-	  },
-	  {
-		"item_id": 1002,
-		"count": 2,
-		"description": "desc2"
-	  },
-	  {
-		"item_id": 1003,
-		"count": 1,
-		"description": "desc3"
-	  }
-	]
+    "some_array_1": [
+      12,
+      21,
+      3,
+      1
+    ],
+    "some_array_2": [
+      3.3,
+      21,
+      99.2
+    ],
+    "some_array_3": [
+      "rabbit",
+      "tank"
+    ],
+    "some_map_1": [
+      [
+        "赵日天",
+        30000.998
+      ]
+    ],
+    "some_bean_1": {
+      "item_id": 2001,
+      "count": 5,
+      "description": ""
+    },
+    "some_bean_2": {
+      "item_id": 2001,
+      "count": 5,
+      "description": ""
+    },
+    "some_bean_list": [
+      {
+        "item_id": 1001,
+        "count": 1,
+        "description": "desc1"
+      },
+      {
+        "item_id": 1002,
+        "count": 2,
+        "description": "desc2"
+      },
+      {
+        "item_id": 1003,
+        "count": 1,
+        "description": "desc3"
+      }
+    ]
   }
 ]

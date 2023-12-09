@@ -12,8 +12,12 @@ config_version=5
 
 config/name="godot-luban-project"
 run/main_scene="res://src/scenes/configs_detail.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameMain="*res://src/framework/game_main.gd"
 
 [rendering]
 

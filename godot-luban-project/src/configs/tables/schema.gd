@@ -5,16 +5,23 @@
 #    the code is regenerated.
 #  </auto-generated>
 
-
+@tool
 class_name Schema
+extends RefCounted
+
 
 enum ItemEQuality
 {
-	WHITE = 1,# 最差品质
-	BLUE = 2,# 蓝色的
-	PURPLE = 3,# 紫色的
-	RED = 4,# 最高品质
+	## 最差品质
+	WHITE = 1,
+	## 蓝色的
+	BLUE = 2,
+	## 紫色的
+	PURPLE = 3,
+	## 最高品质
+	RED = 4,
 }
+
 
 enum TestAccessFlag
 {
@@ -22,162 +29,201 @@ enum TestAccessFlag
 	READ = 2,
 	TRUNCATE = 4,
 	NEW = 8,
-	READ_WRITE = WRITE|READ,# 位标记使用示例
+	## 位标记使用示例
+	READ_WRITE = WRITE|READ,
 }
 
-# 道具类型
+
+## 道具类型
 enum EExampleType
 {
-	Consumable = 1,# 消耗品
-	Equipment = 2,# 装备
-	Weapon = 3,# 武器
+	## 消耗品
+	Consumable = 1,
+	## 装备
+	Equipment = 2,
+	## 武器
+	Weapon = 3,
 }
+
 
 enum EAttributeType
 {
-	Heath = 1,# 生命
-	MaxHealth = 2,# 最大生命
-	Attack = 3,# 攻击
-	Defense = 4,# 防御
-	CriticalRate = 5,# 暴击率
-	CriticalDamage = 6,# 暴击伤害
+	## 生命
+	Health = 1,
+	## 最大生命
+	MaxHealth = 2,
+	## 攻击
+	Attack = 3,
+	## 防御
+	Defense = 4,
+	## 暴击率
+	CriticalRate = 5,
+	## 暴击伤害
+	CriticalDamage = 6,
 }
 
-# 道具类型
+
+## 道具类型
 enum EItemType
 {
-	Consumable = 1,# 消耗品
-	Equipment = 2,# 装备
+	## 消耗品
+	Consumable = 1,
+	## 装备
+	Equipment = 2,
 }
 
 
-class ExampleBasic :
+class ExampleBasic:
+	## 这是Id
 	var id: int
+	## 名字
 	var name: String
+	## 价格
 	var price: float
+	## 类型
 	var type: int
+	## 是否可抽取
 	var is_in_gacha: bool
+	## 这是一个long
 	var some_long_value: int
+	## 这是一个double
 	var some_double_value: float
-	var some_vec3: Vector3
 
 	func _init(_json_) -> void:
-		self.id = _json_['id']
-		self.name = _json_['name']
-		self.price = _json_['price']
-		self.type = _json_['type']
-		self.is_in_gacha = _json_['is_in_gacha']
-		self.some_long_value = _json_['some_long_value']
-		self.some_double_value = _json_['some_double_value']
-		self.some_vec3 = Vector3(_json_['some_vec3'])
+		self.id = _json_["id"]
+		self.name = _json_["name"]
+		self.price = _json_["price"]
+		self.type = _json_["type"]
+		self.is_in_gacha = _json_["is_in_gacha"]
+		self.some_long_value = _json_["some_long_value"]
+		self.some_double_value = _json_["some_double_value"]
 
 
-class ExampleAdvance :
+class ExampleAdvance:
+	## 这是一个int数组,用逗号分隔
 	var some_array_1: Array[int]
+	## 这是一个float数组，用分号分隔
 	var some_array_2: Array[float]
+	## 这是一个string列表，用◆分隔
 	var some_array_3: Array[String]
-	var some_array_4: Array
+	## 这是一个键为string，值为float的字典
 	var some_map_1: Dictionary
+	## 道具Id
 	var some_bean_1: Reward
+	## 也可以这样写成一格
 	var some_bean_2: Reward
+	## 自定义类型列表
 	var some_bean_list: Array[Reward]
 
 	func _init(_json_) -> void:
 		self.some_array_1 = []
-		for _ele in _json_['some_array_1']: var _e; _e = _ele; self.some_array_1.append(_e)
+		for _ele in _json_["some_array_1"]: var _e: int; _e = _ele; self.some_array_1.append(_e)
 		self.some_array_2 = []
-		for _ele in _json_['some_array_2']: var _e; _e = _ele; self.some_array_2.append(_e)
+		for _ele in _json_["some_array_2"]: var _e: float; _e = _ele; self.some_array_2.append(_e)
 		self.some_array_3 = []
-		for _ele in _json_['some_array_3']: var _e; _e = _ele; self.some_array_3.append(_e)
-		self.some_array_4 = []
-		for _ele in _json_['some_array_4']: var _e; _e = []
-		for _ele in _ele: var _e; _e = _ele; _e.append(_e); self.some_array_4.append(_e)
+		for _ele in _json_["some_array_3"]: var _e: String; _e = _ele; self.some_array_3.append(_e)
 		self.some_map_1 = {}
-		for _e in _json_['some_map_1']: var _k; _k = _e[0]; var _v; _v = _e[1]; self.some_map_1[_k] = _v
-		self.some_bean_1 = Reward.new(_json_['some_bean_1'])
-		self.some_bean_2 = Reward.new(_json_['some_bean_2'])
+		for _e in _json_["some_map_1"]: var _k: String; _k = _e[0]; var _v: float; _v = _e[1]; self.some_map_1[_k] = _v
+		self.some_bean_1 = Reward.new(_json_["some_bean_1"])
+		self.some_bean_2 = Reward.new(_json_["some_bean_2"])
 		self.some_bean_list = []
-		for _ele in _json_['some_bean_list']: var _e; _e = Reward.new(_ele); self.some_bean_list.append(_e)
+		for _ele in _json_["some_bean_list"]: var _e: Reward; _e = Reward.new(_ele); self.some_bean_list.append(_e)
 
-class Reward :
+
+class Reward:
+	## 这是Id
 	var item_id: int
+	## 数量
 	var count: int
+	## 描述
 	var description: String
 
 	func _init(_json_) -> void:
-		self.item_id = _json_['item_id']
-		self.count = _json_['count']
-		self.description = _json_['description']
+		self.item_id = _json_["item_id"]
+		self.count = _json_["count"]
+		self.description = _json_["description"]
 
-class ExampleSingleton :
+
+class ExampleSingleton:
+	## 新手商店优惠次数
 	var newbie_discount_times: int
+	## 单日好感度增加上限
 	var affection_increment_limit: float
+	## 礼物冷却时间
 	var gift_cooldown: int
 
 	func _init(_json_) -> void:
-		self.newbie_discount_times = _json_['newbie_discount_times']
-		self.affection_increment_limit = _json_['affection_increment_limit']
-		self.gift_cooldown = _json_['gift_cooldown']
+		self.newbie_discount_times = _json_["newbie_discount_times"]
+		self.affection_increment_limit = _json_["affection_increment_limit"]
+		self.gift_cooldown = _json_["gift_cooldown"]
 
 
 class ExamplesTbExampleBasic:
-	var _data_list = []
-	var _data_map = {}
-	func _init(_json_ ) -> void:
-		self._data_map = {}
-		self._data_list = []
-		
+	var _data_list: Array[ExampleBasic]
+	var _data_map: Dictionary
+	
+	func _init(_json_) -> void:
 		for _json2_ in _json_:
-			var _v
+			var _v: ExampleBasic
 			_v = ExampleBasic.new(_json2_)
 			self._data_list.append(_v)
 			self._data_map[_v.id] = _v
 
-	func get_data_map() -> Dictionary : return self._data_map
-	func get_data_list() -> Array : return self._data_list
+	func get_data_list() -> Array[ExampleBasic]:
+		return self._data_list
 
-	func get_item(key) -> ExampleBasic : return self._data_map.get(key)
+	func get_data_map() -> Dictionary:
+		return self._data_map
+
+	func get_item(key) -> ExampleBasic:
+		return self._data_map.get(key)
+
 
 class ExamplesTbExampleAdvance:
-	var _data_list = []
-	func _init(_json_):
-		self._data_list = []
-		
+	var _data_list: Array[ExampleAdvance] ## 数据数组
+	
+	func _init(_json_) -> void:
 		for _json2_ in _json_:
-			var _v
+			var _v: ExampleAdvance
 			_v = ExampleAdvance.new(_json2_)
 			self._data_list.append(_v)
 
-	func get_data_list() -> Array : return self._data_list
-	func get_item(index) -> ExampleAdvance : return self._data_list[index]
+	func get_data_list() -> Array[ExampleAdvance]:
+		return self._data_list
+	
+	func get_item(index) -> ExampleAdvance:
+		return self._data_list[index]
 
 class ExamplesTbExampleSingleton:
-	var _data: ExampleSingleton
-	func _init(_json_):
-		assert(len(_json_) == 1, "table mode=one, but size != 1")
+	var _data:ExampleSingleton
+	
+	func _init(_json_) -> void:
+		assert(len(_json_) == 1, "table mode = one, but size != 1")
 		self._data = ExampleSingleton.new(_json_[0])
 
-	func get_data() -> ExampleSingleton : return self._data
+	func get_data() -> ExampleSingleton:
+		return self._data
 
-	# 新手商店优惠次数
+	## 新手商店优惠次数
 	var newbie_discount_times: int:
 		get: return self._data.newbie_discount_times
-	# 单日好感度增加上限
+
+	## 单日好感度增加上限
 	var affection_increment_limit: float:
 		get: return self._data.affection_increment_limit
-	# 礼物冷却时间
+
+	## 礼物冷却时间
 	var gift_cooldown: int:
 		get: return self._data.gift_cooldown
 
 
-
-class cfg_Tables:
-	var TbExampleBasic: ExamplesTbExampleBasic 
-	var TbExampleAdvance: ExamplesTbExampleAdvance 
-	var TbExampleSingleton: ExamplesTbExampleSingleton 
-	func _init(loader):
-		self.TbExampleBasic = ExamplesTbExampleBasic.new(loader.call('examples_tbexamplebasic')); 
-		self.TbExampleAdvance = ExamplesTbExampleAdvance.new(loader.call('examples_tbexampleadvance')); 
-		self.TbExampleSingleton = ExamplesTbExampleSingleton.new(loader.call('examples_tbexamplesingleton')); 
-		pass
+class CfgTables:
+	var TbExampleBasic: ExamplesTbExampleBasic
+	var TbExampleAdvance: ExamplesTbExampleAdvance
+	var TbExampleSingleton: ExamplesTbExampleSingleton
+	
+	func _init(loader: Callable) -> void:
+		self.TbExampleBasic = ExamplesTbExampleBasic.new(loader.call('examples_tbexamplebasic'))
+		self.TbExampleAdvance = ExamplesTbExampleAdvance.new(loader.call('examples_tbexampleadvance'))
+		self.TbExampleSingleton = ExamplesTbExampleSingleton.new(loader.call('examples_tbexamplesingleton'))
 
