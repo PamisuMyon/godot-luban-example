@@ -1,7 +1,1 @@
-[
-  {
-	"id": "Player_Robber",
-	"max_health": 100,
-	"attack": 12
-  }
-]
+[{"id":"Player_Robber","max_health":100,"attack":12}]

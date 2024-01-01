@@ -6,6 +6,7 @@ set GEN_CLIENT=dotnet ..\Luban\Tools\Luban.ClientServer\Luban.ClientServer.dll
  --output_data_dir ..\..\godot-luban-project\assets\configs\tables  ^
  --output_code_dir ..\..\godot-luban-project\src\configs\tables ^
  --naming_convention:bean_member under_scores ^
+ --output:data:compact_json true ^
  --gen_types code_gdscript_json,data_json ^
  --service all
 pause
